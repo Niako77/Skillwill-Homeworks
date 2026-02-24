@@ -1,0 +1,291 @@
+$primary-orange: #d87d4a;
+$primary-hover: #d29c6c;
+$primary-active: #a54001;
+$dark-bg: #0e0e0e;
+$text-white: #ffffff;
+$gray-background: rgba(241, 241, 241, 1);
+
+$font-main: "Manrope", sans-serif;
+
+html,
+body,
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin gray-box {
+  background-color: $gray-background;
+  border: none;
+  border-radius: 10px;
+  height: 284px;
+  width: 350px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+}
+
+.banner {
+  background-color: #0e0e0e;
+  height: 729px;
+  padding: 32px 165px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  gap: 18px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+.nav-box {
+  @include flex-between;
+  z-index: 2;
+}
+
+.navbar {
+  @include flex-between;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: $text-white;
+  font-size: 13px;
+  line-height: 25px;
+  width: 400px;
+  height: 25px;
+  z-index: 3;
+  text-transform: uppercase;
+  cursor: pointer;
+  gap: 34px;
+  transform: translateX(-80px);
+}
+
+.img-audiophile {
+  cursor: pointer;
+}
+
+.img-basket {
+  cursor: pointer;
+  z-index: 2;
+}
+
+.img-hamburger {
+  display: none;
+}
+
+.line1 {
+  background-color: $text-white;
+  width: 100%;
+  height: 1px;
+  margin-top: 30px;
+  opacity: 0.2;
+}
+
+.advert-container {
+  @include flex-center;
+  color: $text-white;
+  margin-top: -90px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.description {
+  margin-top: -60px;
+  width: 398px;
+  height: 346px;
+
+  p:first-child {
+    line-height: 19px;
+    max-width: 400px;
+    opacity: 0.4964;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+
+  h1 {
+    margin-top: 23px;
+    font-size: 56px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  p:nth-of-type(2) {
+    opacity: 0.75;
+    line-height: 25px;
+    letter-spacing: 0;
+    max-width: 389px;
+    height: 75px;
+    margin-bottom: 40px;
+  }
+
+  button {
+    background-color: $primary-orange;
+    color: $text-white;
+    padding: 10px;
+    width: 160px;
+    height: 48px;
+    border: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+
+    &:active {
+      background-color: $primary-active;
+    }
+  }
+}
+
+.big-headphone {
+  width: 708.8px;
+  height: 886px;
+  opacity: 1;
+  left: 609.6px;
+}
+
+.product-container {
+  @include flex-center;
+  gap: 50px;
+  height: 284px;
+  max-width: 1110px;
+  margin: 120px auto 0;
+}
+
+.product-item {
+  @include flex-center;
+  flex-direction: column;
+  position: relative;
+  max-width: 350px;
+  height: 204px;
+  & > img {
+    position: absolute;
+    top: -90px;
+    width: 120px;
+    filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.45));
+  }
+}
+
+.textbox {
+  @include gray-box;
+  @include flex-center();
+  flex-direction: column;
+  text-transform: uppercase;
+  letter-spacing: 1.29px;
+  padding-top: 40px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  h5 {
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+
+  & > img {
+    width: 8px;
+    height: 9px;
+    transition: transform 0.3s;
+  }
+}
+.shop-link {
+  @include flex-center();
+  gap: 8px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .banner {
+    background-color: #0e0e0e;
+    height: 729px;
+    padding: 32px 125px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .textbox {
+    height: 160px;
+    padding-top: 30px;
+
+    h2 {
+      font-size: 14px;
+    }
+    h5 {
+      font-size: 11px;
+    }
+  }
+}
+
+.product-container {
+  @include flex-center();
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0;
+  }
+  .banner {
+    padding: 32px 24px;
+    height: 90px;
+  }
+
+  .navbar {
+    display: none;
+  }
+  .line1 {
+    display: none;
+  }
+  .advert-container {
+    display: none;
+  }
+
+  .nav-box {
+    justify-content: space-between;
+  }
+
+  .product-container {
+    gap: 150px;
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+
+  .img-hamburger {
+    display: block;
+  }
+}
