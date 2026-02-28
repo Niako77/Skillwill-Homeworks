@@ -1,0 +1,164 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bell-shake {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(18deg);
+  }
+  20% {
+    transform: rotate(-18deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-6deg);
+  }
+  90% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    color: #999;
+  }
+  25% {
+    transform: scale(1.2);
+    color: #ff3b3b;
+  }
+  40% {
+    transform: scale(1);
+    color: #ff0000;
+  }
+  60% {
+    transform: scale(1.2);
+    color: #ff3b3b;
+  }
+  100% {
+    transform: scale(1);
+    color: #999;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+form {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 22px 32px;
+}
+.navigation .logo-search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+}
+.navigation .logo-search-wrapper a {
+  font-weight: 500;
+  color: #3563e9;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.navigation .logo-search-wrapper input {
+  border: solid 1px rgba(195, 212, 233, 0.4);
+  border-radius: 70px;
+  width: 492px;
+  padding: 8px 58px;
+}
+.navigation .logo-search-wrapper img {
+  cursor: pointer;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.navigation .logo-search-wrapper img:first-of-type {
+  left: 20px;
+}
+.navigation .logo-search-wrapper img:last-of-type {
+  right: 20px;
+}
+.navigation .cta-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.navigation .cta-wrapper a:not(:last-child) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(195, 212, 233, 0.4);
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+}
+.navigation .cta-wrapper :last-child {
+  border-radius: 50%;
+}
+.navigation .notification-button {
+  position: relative;
+}
+.navigation .notification-button::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  top: 2px;
+  right: 2px;
+  background-color: #ff4423;
+  border-radius: 50%;
+  position: absolute;
+}
+.navigation .settings-button:hover {
+  animation: rotate 1s linear;
+}
+.navigation .notification-button:hover {
+  animation: bell-shake 0.8s ease-in-out;
+}
+.navigation .heart-button:hover {
+  animation: heartbeat 0.8s ease-in-out;
+}/*# sourceMappingURL=carrent.css.map */
